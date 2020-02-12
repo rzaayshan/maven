@@ -2,29 +2,27 @@ package app;
 
 import java.util.Arrays;
 
-public class array {
+public class array1 {
     public static void main(String[] args) {
         int[] even = new int [30];
         int sum_even = 0;
         int[] odd = new int [30];
         int sum_odd = 0;
         /////////////////////////////////////
-        for(int i=0;i<30;){
-            int a = (int) (Math.random()*40-20);
-            if(a%2==0){
-                even[i]= a;
-                i++;
-            }}
-        for(int i=0;i<30;){
-            int a = (int) (Math.random()*60-30);
-            if(a%2!=0){
-                odd[i]= a;
-                i++;}
+        for(int i=0;i<30;i++){
+            int a = (int) (Math.random()*20-10);
+            a = 2*a;
+            even[i]= a;
+            }
+        for(int i=0;i<30;i++){
+            int a = (int) (Math.random()*30-15);
+            a = 2*a+1;
+            odd[i]= a;
         }
         //////////////////////////////////////
         for(int i=0;i<30;i++){
-               sum_even+=even[i];
-                }
+            sum_even+=even[i];
+        }
 
         for(int i=0;i<30;i++){
             sum_odd+=odd[i];
@@ -38,15 +36,7 @@ public class array {
         System.out.println(oddString);
         System.out.println(sum_odd);
         int sum = sum_even+sum_odd;
+
         System.out.println(sum);
-
-
-
-
-
-    }}
-
-
-
-
-
+    }
+}
