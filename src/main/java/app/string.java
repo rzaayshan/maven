@@ -37,7 +37,7 @@ public class string {
 
         for(int i=0;i<s.length();i++){
             int b = (int) s.charAt(i);
-            if(b>65 && b<91)
+            if(b>64 && b<91)
                 upper = upper + s.charAt(i);
             else
                 lower = lower + s.charAt(i);
