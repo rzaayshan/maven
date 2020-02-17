@@ -18,8 +18,9 @@ public class string {
         s = new Scanner(System.in).nextLine();
         String vowel = new String();
         String consonant = new String();
+        String k = s.toLowerCase();
         for(int i=0;i<s.length();i++){
-            if(isVowel(s.charAt(i))) vowel=vowel+s.charAt(i);
+            if(isVowel(k.charAt(i))) vowel=vowel+s.charAt(i);
             else consonant=consonant+s.charAt(i);
         }
         System.out.println(s);
