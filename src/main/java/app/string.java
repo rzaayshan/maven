@@ -12,12 +12,19 @@ public class string {
         return false;
     }
     public static void main(String[] args) {
-        String s;
+        String s = new String();
         int n=20;
-        System.out.println("Please, enter string: ");
-        s = new Scanner(System.in).nextLine();
         String vowel = new String();
         String consonant = new String();
+        char letter;
+        for(int i=0;i<n;i++){
+            int ran = (int)(Math.random()*10-5);
+            if(ran>0)
+                letter = (char)(int)(Math.random()*26+65);
+            else
+                letter = (char)(int)(Math.random()*26+97);
+            s = s+letter;}
+
         String k = s.toLowerCase();
         for(int i=0;i<s.length();i++){
             if(isVowel(k.charAt(i))) vowel=vowel+s.charAt(i);
