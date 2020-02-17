@@ -16,6 +16,7 @@ public class string {
         int n=20;
         String vowel = new String();
         String consonant = new String();
+        String k;
         char letter;
         for(int i=0;i<n;i++){
             int ran = (int)(Math.random()*10-5);
@@ -25,7 +26,7 @@ public class string {
                 letter = (char)(int)(Math.random()*26+97);
             s = s+letter;}
 
-        String k = s.toLowerCase();
+        k = s.toLowerCase();
         for(int i=0;i<s.length();i++){
             if(isVowel(k.charAt(i))) vowel=vowel+s.charAt(i);
             else consonant=consonant+s.charAt(i);
