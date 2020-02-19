@@ -6,6 +6,6 @@ public class Cat extends Animal {
     }
     @Override
     public String toString() {
-        return String.format("I am a cat. My name is %s",this.name);
+        return String.format("I am a cat. My name is %s",name);
     }
 }

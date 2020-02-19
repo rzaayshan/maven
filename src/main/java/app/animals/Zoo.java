@@ -1,7 +1,4 @@
 package app.animals;
-
-
-
 public class Zoo {
     public static void main(String[] args) {
         Cat cat1=new Cat("Kitty");
@@ -9,5 +6,5 @@ public class Zoo {
         System.out.println(cat1);
         System.out.println(dog1);
     }
-    
+
 }
