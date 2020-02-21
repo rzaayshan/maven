@@ -14,8 +14,9 @@ public class Main {
         figures.add(r);
         figures.add(t);
         figures.add(c);
-        System.out.println(r.area());
-        System.out.println(c.area());
-        System.out.println(t.area());
+        Double total = 0.0;
+        for (Figure f: figures)
+            total+=f.area();
+        System.out.println(total);
     }
 }
