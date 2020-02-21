@@ -1,9 +1,9 @@
 package app.Figures;
 
 public class Triangle extends Figure {
-    Point a = new Point();
-    Point b = new Point();
-    Point c = new Point();
+    Point a;
+    Point b;
+    Point c;
     Triangle(Point a, Point b, Point c){
         this.a=a;
         this.b=b;
