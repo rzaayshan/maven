@@ -7,9 +7,8 @@ public class FigureApp {
     switch ((int) Math.random()*3){
       case 0: return new Triangle(createPoint(),createPoint(),createPoint());
       case 1: return new Rectangle(createPoint(),createPoint());
-      case 2: return new Circle(createPoint(),(int)(Math.random()*30-15));
       default:
-        return null;
+        return new Circle(createPoint(),(int)(Math.random()*30-15));
     }}
 
     static Point createPoint(){
