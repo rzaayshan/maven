@@ -16,9 +16,15 @@ public class FormatterApp {
     print("hello", fmt3); // ***********
                             // *  HELLO  *
                             // ***********
+
     System.out.println("Second task");
     fmt1.print("hello");    // hello
     fmt2.print("hello");    // HELLO
     fmt3.print("hello");
+
+    System.out.println("Third task");
+    System.out.println(new Formatter1("hello")); // hello
+    System.out.println(new Formatter2("hello")); // HELLO
+    System.out.println(new Formatter3("hello")); // ***********
   }
 }
