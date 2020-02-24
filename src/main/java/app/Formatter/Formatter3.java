@@ -16,4 +16,5 @@ public class Formatter3 extends Formatter{
     public String toString() {
         return super.toString();
     }
+
 }
