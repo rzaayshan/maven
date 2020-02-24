@@ -2,7 +2,8 @@ package app.Formatter;
 
 public class Formatter1 extends Formatter {
     String formatter(String s){
-        return s;
+        this.s=s;
+        return this.s;
     }
     Formatter1(){
 
