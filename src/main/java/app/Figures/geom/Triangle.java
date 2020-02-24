@@ -1,4 +1,4 @@
-package app.geom;
+package app.Figures.geom;
 
 public class Triangle extends Figure {
   Point point1;
@@ -9,6 +9,10 @@ public class Triangle extends Figure {
     this.point1 =pt1;
     this.point2 =pt2;
     this.point3 =pt3;
+  }
+
+  public static Triangle rand() {
+    return new Triangle(Point.rand(), Point.rand(), Point.rand());
   }
 
   private double distance(Point p1, Point p2) {
@@ -22,6 +26,9 @@ public class Triangle extends Figure {
     double side3 = distance(point3, point1);
     double hp = (side1 + side2 + side3) / 2;
     return (int)(Math.sqrt(hp*(hp-side1)*(hp-side2)*(hp-side3)));
+  }
+  public String toString(){
+    return (String.format("Triangle: {Points : %s, %s, %s}", point1.toString(),point2.toString(),point3.toString()));
   }
 
 }

@@ -1,4 +1,4 @@
-package app.geom;
+package app.Figures.geom;
 
 public abstract class Figure {
 
