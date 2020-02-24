@@ -2,9 +2,9 @@ package app.Formatter;
 
 public class FormatterApp {
   public static void print(String s, Formatter f) {
-    f.s=s;
-    f.formatter(s);
-    System.out.println(f.s);
+
+    System.out.println(f.formatter(s));
+
   }
   public static void main(String[] args) {
     Formatter fmt1 = new Formatter1();
