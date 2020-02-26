@@ -29,6 +29,18 @@ class myAppTest {
         String act = a.filter("aaaBBBBaaa");
         assertEquals(exp,act);
     }
+    @Test
+    public void test4(){
+        String exp = "bbbb";
+        String act = a.filter("aaaBBBBaaa");
+        assertEquals(exp,act);
+    }
+    @Test
+    public void test5(){
+        String exp = null;
+        String act = a.filter(null);
+        assertEquals(exp,act);
+    }
 
 
 
