@@ -11,7 +11,7 @@ public abstract class Formatter {
 
     }
     Formatter(String s){
-        this.s=s;
+        this.s=formatter(s);
     }
     @Override
     public String toString() {

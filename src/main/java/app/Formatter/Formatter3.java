@@ -12,6 +12,7 @@ public class Formatter3 extends Formatter{
             this.s+="*";
         return this.s;
     }
+
     Formatter3(){
 
     }

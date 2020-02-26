@@ -2,7 +2,7 @@ package app.Formatter;
 
 public class Formatter1 extends Formatter {
     String formatter(String s){
-        this.s=s;
+        this.s=s.toLowerCase();
         return this.s;
     }
     Formatter1(){
