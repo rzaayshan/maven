@@ -1,9 +1,6 @@
 package app.lesson12;
 
-
-
 import java.io.*;
-
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -12,7 +9,7 @@ public class IOFile {
 
     static List<Integer> generate(int n, int min, int max){
         List<Integer> list = new LinkedList<>();
-        for(int i=0;i<100;i++){
+        for(int i=0;i<n;i++){
             int rand=(int)(Math.random()*61-30);
             list.add(rand);
         }
