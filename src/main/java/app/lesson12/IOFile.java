@@ -7,6 +7,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class IOFile {
+    class Pair{
+        int key;
+        int value;
+    }
 
     static List<Integer> generate(int n, int min, int max){
         List<Integer> list = new LinkedList<>();
@@ -17,11 +21,11 @@ public class IOFile {
         return list;
     }
 
-    static void write(List<Integer> l, String name) throws IOException {
+    static void write(List<String> l, String name) throws IOException {
         File ofile = new File(name);
         BufferedWriter bw = new BufferedWriter(new FileWriter(ofile));
-        for(Integer el: l){
-            bw.write(el.toString());
+        for(String el: l){
+            bw.write(el);
             bw.write("\n");
         }
         bw.close();
@@ -42,17 +46,25 @@ public class IOFile {
         Collections.sort(l);
         return l;
     }
-    static List<Integer>convert(List<String> l){
+    static List<Integer>convertSI(List<String> l){
         List<Integer> lInt = l.stream().map(x->Integer.parseInt(x)).collect(Collectors.toList());
         return lInt;
     }
+    static List<String>convertIS(List<Integer> l){
+        List<String> lStr = l.stream().map(x->x.toString()).collect(Collectors.toList());
+        return lStr;
+    }
+
     public static void main(String[] args) throws IOException {
         List<Integer> randoms = generate(100, -30, 30);
-        write(randoms, "file1.txt");
-        List<String> contents = read("file1.txt");
-        List<Integer> randoms2 = convert(contents);
-        List<Integer> sorted_randoms = sort(randoms2);
-        write(sorted_randoms, "file2.txt");
 
+        List<String> randoms2 = convertIS(randoms);
+        write(randoms2, "file1.txt");
+        List<String> contents = read("file1.txt");
+
+        List<Integer> randoms3 = convertSI(contents);
+        List<Integer> sorted_randoms = sort(randoms3);
+        List<String> sorted_randomss = convertIS(sorted_randoms);
+        write(sorted_randomss, "file2.txt");
     }
 }
