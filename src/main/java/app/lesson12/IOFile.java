@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class IOFile {
 
@@ -26,7 +27,7 @@ public class IOFile {
         bw.close();
     }
 
-    static List<Integer>read(String name) throws IOException {
+    static List<String>read(String name) throws IOException {
         File ifile = new File(name);
         BufferedReader br = new BufferedReader(new FileReader(ifile));
         List<String> l = new LinkedList<>();
@@ -35,22 +36,23 @@ public class IOFile {
             l.add(br.readLine());
         }
         br.close();
-        for(String el: l)
-            lInt.add(Integer.parseInt(el));
-        return lInt;
+        return l;
     }
     static List<Integer> sort(List<Integer> l){
         Collections.sort(l);
         return l;
     }
-
+    static List<Integer>convert(List<String> l){
+        List<Integer> lInt = l.stream().map(x->Integer.parseInt(x)).collect(Collectors.toList());
+        return lInt;
+    }
     public static void main(String[] args) throws IOException {
         List<Integer> randoms = generate(100, -30, 30);
         write(randoms, "file1.txt");
-        List<Integer> randoms2 = read("file1.txt");
+        List<String> contents = read("file1.txt");
+        List<Integer> randoms2 = convert(contents);
         List<Integer> sorted_randoms = sort(randoms2);
         write(sorted_randoms, "file2.txt");
-
 
     }
 }
