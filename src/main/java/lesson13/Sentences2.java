@@ -10,9 +10,9 @@ public class Sentences2 {
         // read 1st
         List<String> f1 = read("subj_verb.txt");
         // read second
-        List<String> f2 = read("verb_obj_.txt");
+        List<String> f2 = read("verb_obj.txt");
         // convert 1st to map
-        if(!(f1==null || f2==null)) {
+        if(check(f1,f2)) {
             Map<String, List<String>> sv = convert(f1);
             // convert 2nd to map
             Map<String, List<String>> vo = convert(f2);
@@ -21,6 +21,19 @@ public class Sentences2 {
             // write to file
             write("combined.txt", sentences);}
 
+
+    }
+    static boolean check(List<String> file1, List<String> file2){
+        if(file1==null && file2==null){
+            System.out.println("Both of the files don't exist");
+            return false;}
+        else if(file2==null){
+            System.out.println("Second file doesn't exist");
+            return false;}
+        else if(file1==null){
+            System.out.println("First file doesn't exist");
+        return false;}
+        return true;
     }
 
 
@@ -67,7 +80,7 @@ public class Sentences2 {
         File file = new File(filename);
         if(file.exists())
             return new BufferedReader(new FileReader(file)).lines().collect(Collectors.toList());
-        System.out.println("The file doesn't exist");
+
         return null;
     }
 
