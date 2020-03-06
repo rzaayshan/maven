@@ -2,27 +2,25 @@ package lesson13;
 
 import java.io.*;
 import java.util.*;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public class Sentences2 {
-    public static void main(String[] args) throws IOException {
+/*public class Sentences2 {
+   public static void main(String[] args) throws IOException {
         // read 1st
-        List<String> f1 = read("subj_verb.txt");
+        Optional<List<String>> f1 = read("subj_verb.txt");
         // read second
-        List<String> f2 = read("verb_obj.txt");
+        Optional<List<String>> f2 = read("file1.txt");
         // convert 1st to map
-        if(check(f1,f2)) {
-            Map<String, List<String>> sv = convert(f1);
-            // convert 2nd to map
-            Map<String, List<String>> vo = convert(f2);
-            // combine sentences
-            List<Sentence> sentences = combine(sv, vo);
-            // write to file
-            write("combined.txt", sentences);}
-
-
+        Map<String, List<String>> sv = convert(f1);
+        // convert 2nd to map
+        Map<String, List<String>> vo = convert(f2);
+        // combine sentences
+        List<Sentence> sentences = combine(sv, vo);
+        // write to file
+        write("combined.txt", sentences);
     }
+
+
     static boolean check(List<String> file1, List<String> file2){
         if(file1==null && file2==null){
             System.out.println("Both of the files don't exist");
@@ -35,9 +33,6 @@ public class Sentences2 {
         return false;}
         return true;
     }
-
-
-
     private static List<Sentence> combine(Map<String, List<String>> sv, Map<String, List<String>> vo) {
         return sv.keySet().stream().flatMap(subj ->
                 sv.get(subj).stream().flatMap(verb ->
@@ -48,7 +43,7 @@ public class Sentences2 {
         ).collect(Collectors.toList());
     }
 
-    private static Map<String, List<String>> convert(List<String> list) {
+    private static Map<String, List<String>> convert(Optional<List<String>> list) {
         HashMap<String, List<String>> data = new HashMap<>();
         for (String line: list) {
             String[] splitted = line.split(":");
@@ -75,14 +70,11 @@ public class Sentences2 {
         }
         bw.close();
     }
-
-    private static List<String> read(String filename) throws FileNotFoundException {
+    private static Optional<List<String>> read(String filename) throws FileNotFoundException {
         File file = new File(filename);
-        if(file.exists())
-            return new BufferedReader(new FileReader(file)).lines().collect(Collectors.toList());
-
-        return null;
-    }
+            return Optional.ofNullable(new BufferedReader(new FileReader(file)).lines().collect(Collectors.toList()));
 
     }
+
+    }*/
 
