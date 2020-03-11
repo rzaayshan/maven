@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class BracketsTest {
-    private Brackets app;
+    /*private Brackets app;
 
     @BeforeEach
     public void setUp() {
@@ -30,6 +30,6 @@ class BracketsTest {
     @Test
     public void calc3() {
         assertEquals(3, app.calc("()(()())((()()))(())()"));
-    }
+    }*/
 
 }

@@ -1,6 +1,6 @@
 
 public class Brackets {
-    public static int calc(String origin) {
+    /*public static int calc(String origin) {
         int i,k,max=0;
         for(i=0;i<origin.length();i++){
             k=0;
@@ -13,8 +13,7 @@ public class Brackets {
         //throw new RuntimeException("should be implemented");
             return max;
 
-    }
 
-
+    }*/
 }
 
