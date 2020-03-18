@@ -1,4 +1,4 @@
-package app.io;
+package Booking.io;
 
 public interface Console {
   void print(String line);
