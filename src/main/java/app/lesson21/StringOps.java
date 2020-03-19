@@ -1,58 +1,46 @@
 package app.lesson21;
 
+import java.util.stream.Stream;
+
 public class StringOps {
 
-        // abc -> ABC
-        // aBc -> AbC
-        // Abc -> aBC
-        static String invertCase(String origin) {
-            StringBuilder invert = new StringBuilder();
-            for(int i=0;i<origin.length();i++){
-                if(origin.charAt(i)<91)
-                    invert.append((char)(origin.charAt(i)+32));
-                else
-                    invert.append((char)(origin.charAt(i)-32));
-            }
-            return invert.toString();
+
+
+
+    String invertCaseV4(String origin) {
+        char[] chars = origin.toCharArray();
+        for (int i=0; i < chars.length; i++) {
+            chars[i] = (char) (chars[i] ^ 32); // bit XOR operation
         }
-
-        // abc -> ABC
-        // aBc -> ABC
-        // Abc -> ABC
-        static String toUpperCase(String origin) { // a -> A A -> A
-            StringBuilder invert = new StringBuilder();
-            for(int i=0;i<origin.length();i++){
-                if(origin.charAt(i)>91)
-                    invert.append((char)(origin.charAt(i)-32));
-                else
-                    invert.append((char)(origin.charAt(i)));
-
-            }
-            return invert.toString();
-        }
-
-        // abc -> abc
-        // aBc -> abc
-        // Abc -> abc
-        static String toLowerCase(String origin) { // A -> a a -> a
-            StringBuilder invert = new StringBuilder();
-            for(int i=0;i<origin.length();i++){
-                if(origin.charAt(i)<91)
-                    invert.append((char)(origin.charAt(i)+32));
-                else
-                    invert.append((char)(origin.charAt(i)));
-            }
-            return invert.toString();
-
-        }
-        public static void main(String[] args) {
-            System.out.println(invertCase("AbC"));
-            System.out.println(toUpperCase("aBc"));
-            System.out.println(toLowerCase("Abc"));
-        }
-
-
-
+        return new String(chars);
     }
+
+    String toUpperCaseV2(String origin) { // a -> A A -> A
+        char[] chars = origin.toCharArray();
+        for (int i=0; i < chars.length; i++) {
+            if(chars[i]>='a')
+                chars[i] = (char) (chars[i] ^ 32);
+            chars[i] = (char) chars[i] ;
+        }
+        return new String(chars);
+    }
+
+
+    String toLowerCaseV2(String origin) { // A -> a a -> a
+        char[] chars = origin.toCharArray();
+        for (int i=0; i < chars.length; i++) {
+            if(chars[i]<='Z')
+                chars[i] = (char) (chars[i] ^ 32);
+        chars[i] = (char) chars[i] ;
+        }
+        return new String(chars);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(new StringOps().invertCaseV4("HelloWorld"));
+        System.out.println(new StringOps().toLowerCaseV2("HelloWorld"));
+        System.out.println(new StringOps().toUpperCaseV2("HelloWorld"));
+
+    }}
 
 
