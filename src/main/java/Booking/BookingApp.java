@@ -10,7 +10,6 @@ import java.util.Scanner;
 
 public class BookingApp {
   public static void main(String[] args) {
-    System.out.println(LocalDateTime.now());
     Console console = new UnixConsole(new Scanner(System.in));
     Database db = new Database();
     AppService service = new AppService(db);
