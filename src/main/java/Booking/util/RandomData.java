@@ -23,28 +23,8 @@ public class RandomData {
         );
   }
 
-  public static LocalTime genTime(){
-    int ranHour = (int) (Math.random()*24);
-    int ranMin = (int) (Math.random()*60);
-    int ranSec = (int) (Math.random()*60);
-    String s = String.format(String.format("%02d:%02d:%02d",ranHour,ranMin,ranSec));
-    LocalTime time = LocalTime.parse(s);
-    return time;
-  }
-
-  public static LocalDate genDate(){
-    Random r = new Random();
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-    int ranDay = (int) (Math.random()*28 +1);
-    int ranMonth = (int) (Math.random()*12 +1);
-    int ranYear = (int) (Math.random()*(-1001) + 3000);
-
-    String s = String.format("%04d-%02d-%02d",ranYear,ranMonth,ranDay);
-    return LocalDate.parse(s,formatter);
-  }
-
   public static String genCity(){
-    String cities[] = {"Bakı", "Gəncə", "İstanbul", "Ankara", "Berlin", "Paris", "Roma"};
+    String cities[] = {"Baku", "Ganja", "Istanbul", "Ankara", "Berlin", "Paris", "Roma"};
     int num = (int) (Math.random()*7);
     return cities[num];
   }

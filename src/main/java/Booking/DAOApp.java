@@ -17,6 +17,7 @@ public class DAOApp {
     db.users.create(new User("ayshan", "234"));
     db.users.create(new User("sevil", "123"));
     db.flights.create(new Flight("Kyiv", "Baki", LocalDateTime.now(), 100));
+    db.flights.create(new Flight("Paris", "Roma", LocalDateTime.now().plusHours(2), 100));
     db.bookings.create(new Booking(1, 1, Arrays.asList(new Passenger("A","B"), new Passenger("C", "D"))));
     db.users.getAll().forEach(u -> System.out.println(u.represent()));
   }

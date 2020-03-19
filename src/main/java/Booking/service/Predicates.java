@@ -25,4 +25,6 @@ public class Predicates {
         return u -> u.getUser_name().equals(user) && u.getPasswd().equals(pass);
     }
 
+
+
 }

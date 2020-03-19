@@ -5,10 +5,12 @@ import Booking.io.Console;
 import Booking.io.UnixConsole;
 import Booking.service.AppService;
 
+import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class BookingApp {
   public static void main(String[] args) {
+    System.out.println(LocalDateTime.now());
     Console console = new UnixConsole(new Scanner(System.in));
     Database db = new Database();
     AppService service = new AppService(db);

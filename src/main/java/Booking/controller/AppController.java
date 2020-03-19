@@ -5,6 +5,7 @@ import Booking.entity.Passenger;
 import Booking.io.Console;
 import Booking.service.AppService;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Collection;
@@ -29,7 +30,7 @@ public class AppController {
     console.printLn("Enter destination point:");
     String dest = console.readLn();
     console.printLn("Enter date:");
-    LocalDateTime date = LocalDateTime.parse(console.readLn(), DateTimeFormatter.ofPattern("YYYY-MM-dd hh:mm"));
+    LocalDateTime date = LocalDate.parse(console.readLn(), DateTimeFormatter.ofPattern("yyyy-MM-dd")).atStartOfDay();
     console.printLn("Enter number of passengers:");
     int pass_num = Integer.parseInt(console.readLn());
     if(!searchFlights(dest,date,pass_num))

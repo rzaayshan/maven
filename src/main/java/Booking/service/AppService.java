@@ -7,7 +7,9 @@ import Booking.entity.Flight;
 import Booking.entity.Passenger;
 import Booking.entity.User;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -57,7 +59,11 @@ public class AppService {
   }
 
   public Collection<Flight> getAllFlights() {
-    return db.flights.getAllBy(f -> LocalDateTime.now().plusDays(100).isAfter(f.getDate_time()));
+    return db.flights.getAllBy(f -> LocalDateTime.now().plusHours(24).isAfter(f.getDate_time())
+                     && LocalDateTime.now().isBefore(f.getDate_time()));
+
+
+
   }
 
 
