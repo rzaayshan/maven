@@ -9,7 +9,7 @@ public class Fibonacci {
     }
     public static void main(String[] args) {
         int n=6;
-        System.out.printf("%dth element:%d",n,fibo(6));
+        System.out.printf("%dth element:%d",n,fibo(n));
 
     }
 }
