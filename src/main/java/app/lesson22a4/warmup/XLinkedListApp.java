@@ -4,7 +4,7 @@ public class XLinkedListApp {
   public static void main(String[] args) {
     XLinkedList xl = new XLinkedList();
     XLinkedList xl2 = new XLinkedList();
-    xl.prepend(1); // LL: 1
+    /*xl.prepend(1); // LL: 1
     xl.prepend(2); // LL: 2,1
     xl.prepend3(3); // LL: 3,2,1
     xl.append(10);   // LL: 3,2,1,10
@@ -33,6 +33,20 @@ public class XLinkedListApp {
     System.out.println(xl.represent3r());
     xl.insertBefore(0,13);
     System.out.println(xl.represent3r());
+    xl.reverse();
+    System.out.println(xl.represent());*/
+    xl.append(1);
+    xl.append(2);
+    xl.append(5);
+    xl2.append(0);
+    xl2.append(3);
+    xl2.append(4);
+    /*xl.merge1(xl2.head);
+    System.out.println(xl.represent3r());*/
+    System.out.println(xl.represent3r());
+    System.out.println(xl2.represent3r());
+    XLinkedList xl3 = xl.merge2(xl2.head);
+    System.out.println(xl3.represent3r());
 
   }
 }

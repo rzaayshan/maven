@@ -1,0 +1,2 @@
+Algorithms #6.
+- Binary Search

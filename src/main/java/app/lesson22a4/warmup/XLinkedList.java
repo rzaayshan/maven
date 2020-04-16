@@ -7,7 +7,7 @@ public class XLinkedList {
   static class Node {
     final int value;
     Node next;
-    Node prev;
+
 
     Node(int value) {
       this.value = value;
@@ -93,7 +93,7 @@ public class XLinkedList {
   }
 
   int countHR(Node curr) {
-    if(curr.next==null) return 1;
+    if(curr==null) return 0;
     return 1+countHR(curr.next);
   }
 
@@ -120,25 +120,113 @@ public class XLinkedList {
     return check(curr.next,element);
   }
 
-  void reverse() {}
-  void reverser() {}
+  void reverse() {
+    Node curr = head;
+    Node prev = null;
+    while (curr != null) {
+      Node savedNext = curr.next; //
+      curr.next = prev;
+      prev = curr;       // moving to the next node
+      curr = savedNext;  // moving to the next node
+    }
+    head = prev;
+  }
+
+  private Node reverser(Node curr, Node prev) {
+    if (curr == null) return prev;
+    Node savedNext = curr.next; //
+    curr.next = prev;
+    return reverser(savedNext, curr);
+  }
+
+  void reverser() {
+    head = reverser(head, null);
+  }
 
   void merge(Node head2) {
-    if(head==null)
-      head=head2;
-    else{
-      Node curr = head;
-      while(curr.next!=null){
-        curr=curr.next;
+    Node merged;
+    Node merged_head;
+    XLinkedList merged_list;
+    Node curr1=head;
+    Node curr2=head2;
+    if(head.value>head2.value)
+      merged_head=head2;
+    else
+      merged_head=head;
+    while(curr1!=null && curr2!=null){
+      if(curr1.value>curr2.value){
+        merged=curr2;
+        curr2=curr2.next;
       }
-      curr.next=head2;
+      else {
+        merged=curr1;
+        curr1=curr1.next;
+      }
+      merged=merged.next;
     }
+    while (curr1!=null){
+      merged=curr1;
+      merged=merged.next;
+      curr1=curr1.next;
+    }
+    while (curr2!=null){
+      merged=curr2;
+      merged=merged.next;
+      curr2=curr2.next;
+    }
+    head=merged_head;
+  }
+
+  void merge1(Node head2){
+    Node curr1=head;
+    Node curr2=head2;
+    int i=0;
+    while(curr1.next!=null && curr2.next!=null){
+      if(curr1.value>curr2.value){
+        this.insertBefore(i++,curr2.value);
+        curr1=curr1.next.next;
+        curr2=curr2.next;
+      }
+      else{
+        curr1=curr1.next;
+        i++;
+      }
+    }
+    while (curr2!=null){
+      this.insertAfter(i++,curr2.value);
+      curr2=curr2.next;
+    }
+  }
+
+  XLinkedList merge2(Node head2){
+    XLinkedList merged_list = new XLinkedList();
+    Node curr1 = head;
+    Node curr2 = head2;
+    while(curr1!=null && curr2!=null){
+      if(curr1.value<curr2.value){
+        merged_list.append(curr1.value);
+        curr1=curr1.next;
+      }
+      else {
+        merged_list.append(curr2.value);
+        curr2=curr2.next;
+      }
+    }
+    while(curr1!=null){
+      merged_list.append(curr1.value);
+      curr1=curr1.next;
+    }
+    while (curr2!=null){
+      merged_list.append(curr2.value);
+      curr2=curr2.next;
+    }
+    return merged_list;
   }
 
   boolean containsAt(int index, int element) {
     int index1=0;
     for(Node curr=head;curr!=null;curr=curr.next,index1++){
-      if(curr.value==element && index1==index)
+      if(index1==index && curr.value==element)
         return true;
     }
     return false;
@@ -186,17 +274,13 @@ public class XLinkedList {
   }
 
   void insertBefore(int index, int value) {
-    Node newNode = new Node(value);
     if(index==0){
+      Node newNode = new Node(value);
       newNode.next=head;
       head=newNode;
     }
     else {
-      Node curr=head;
-      for(int i=0;i<index-1;i++)
-        curr=curr.next;
-      newNode.next=curr.next;
-      curr.next=newNode;
+      insertAfter(index-1,value);
 
   }}
 }
