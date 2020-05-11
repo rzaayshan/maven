@@ -1,0 +1,5 @@
+Java Web #5
+-- Data Injection to HTML files (template engines like FreeMarker, Thymeleaf, JSP, ...)
+-- File Upload
+-- JSON/XML, serialization, deserialization
+-- Http Request to another server

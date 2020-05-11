@@ -1,0 +1,10 @@
+Java Web #9
+============
+
+- Serving HTTP resources
+- Consuming HTTP (HTTP client)
+ - Grizzly
+ - annotations
+ - lombok library
+ - http requests with authorization
+- logging

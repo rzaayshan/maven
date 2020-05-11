@@ -1,0 +1,13 @@
+Java Web #8
+============
+
++ serialization / deserialization (marshalling / unmarshalling)
+ + getter/setter/non final/empty constructor
+ + JSON
+ + XML
+ + dependencies
+ + examples
+ + HTTP statuses
+ + REST
+ + resources
+ + uri / url

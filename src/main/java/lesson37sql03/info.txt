@@ -1,0 +1,20 @@
+SQL 3
+=====
+
+Constraints
+ - NON NULL
+ - UNIQUE
+ - PRIMARY KEY
+ - DEFAULT VALUE
+
+Relations,
+ - 1:1
+ - 1:N
+ - M:N
+
+JOIN
+ - inner
+ - outer
+ - left, right, full
+
+Foreign Keys

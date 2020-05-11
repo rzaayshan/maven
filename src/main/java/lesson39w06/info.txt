@@ -1,0 +1,14 @@
+Java Web #6
+============
+
+- Cookies
+  - set
+  - read
+  - delete
+  - path
+
+- serialization / deserialization (marshalling / unmarshalling)
+ - JSON
+ - XML
+ - dependencies
+ - examples
