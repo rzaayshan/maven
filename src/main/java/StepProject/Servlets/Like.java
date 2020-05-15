@@ -1,4 +1,8 @@
-package StepProject;
+package StepProject.Servlets;
+
+import StepProject.Helpers.Profile;
+import StepProject.Helpers.TemplateEngine;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -6,27 +10,32 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
+import java.util.LinkedList;
 
-public class UsersServlet extends HttpServlet {
+public class Like extends HttpServlet {
     private final TemplateEngine engine;
 
-    public UsersServlet(TemplateEngine engine) {
+    public Like(TemplateEngine engine) {
         this.engine = engine;
+
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<User> users = DAO.getUsers();
+        LinkedList<Profile> unlikes = Start.unlikes;
         HashMap<String, String> user = new HashMap<>();
         int i = (int)req.getAttribute("i");
-        if(i>=users.size()){
+        if(i>=unlikes.size()){
             i=0;
-            ChoiceServlet.i=0;
+            Choice.i=0;
             resp.sendRedirect("/liked");
         }
-        user.put("name",users.get(i).getName());
-        user.put("image",users.get(i).getImage());
+
+        user.put("uname",unlikes.get(i).getUname());
+        user.put("image",unlikes.get(i).getImage());
+        user.put("name",unlikes.get(i).getName());
+        user.put("surname",unlikes.get(i).getSurname());
+
 
         engine.render("user.ftl", user, resp);
 

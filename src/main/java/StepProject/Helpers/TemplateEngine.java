@@ -1,4 +1,4 @@
-package StepProject;
+package StepProject.Helpers;
 
 import freemarker.template.Configuration;
 import freemarker.template.TemplateException;
