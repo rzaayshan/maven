@@ -34,7 +34,7 @@ public class Main {
         handler.addFilter(new FilterHolder(new IsLogin()),"/users", EnumSet.of(DispatcherType.REQUEST));
         handler.addFilter(new FilterHolder(new IsLogin()),"/liked", EnumSet.of(DispatcherType.REQUEST));
         handler.addFilter(new FilterHolder(new IsLogin()),"/choice", EnumSet.of(DispatcherType.REQUEST));
- //       handler.addServlet(new ServletHolder(new Messeges(engine)),"/messeges/*");
+        handler.addServlet(new ServletHolder(new Messages(engine)),"/message/*");
 
 
         server.setHandler(handler);

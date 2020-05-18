@@ -3,7 +3,6 @@ package StepProject.Servlets;
 import StepProject.Helpers.Profile;
 import StepProject.Helpers.TemplateEngine;
 
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;

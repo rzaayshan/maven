@@ -41,6 +41,10 @@ public class Start extends HttpServlet {
 
             engine.render("user.ftl", user, resp);
         }
+    }
 
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.sendRedirect("/login");
     }
 }
