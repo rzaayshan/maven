@@ -33,6 +33,7 @@ public class Main {
         handler.addServlet(new ServletHolder(new List(engine)),"/liked");
         handler.addServlet(new ServletHolder(new Login()),"/login");
         handler.addServlet(new ServletHolder(new Logout()),"/logout");
+        handler.addServlet(new ServletHolder(new StaticServlet("css")), "/css/*");
 
         handler.addFilter(new FilterHolder(new CanLogin()),"/start", EnumSet.of(DispatcherType.REQUEST));
         handler.addFilter(new FilterHolder(new IsLogin()),"/users", EnumSet.of(DispatcherType.REQUEST));
