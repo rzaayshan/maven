@@ -119,5 +119,11 @@
             <version>1.18.12</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>6.4.2</version>
+        </dependency>
+
     </dependencies>
 </project>
