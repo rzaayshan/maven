@@ -15,13 +15,13 @@ import java.util.EnumSet;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        DbSetup.prepare(
+        /*DbSetup.prepare(
                 "jdbc:postgresql://localhost:5432/step",
                 "postgres",
                 "hidden"
-        );
+        );*/
 
-        Server server = new Server(8085);
+        Server server = new Server(8087);
 
         ServletContextHandler handler = new ServletContextHandler();
 
